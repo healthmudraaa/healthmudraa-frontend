@@ -1,5 +1,11 @@
-import React from 'react';
-import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
+import React from "react";
+import {
+  MDBFooter,
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBIcon,
+} from "mdb-react-ui-kit";
 
 export default function Footer2() {
   return (
@@ -115,7 +121,7 @@ export default function Footer2() {
     //   </section>
     // </MDBFooter>
     <>
-     <style>
+      <style>
         {`
           .Footer {
             padding: 2rem 0;
@@ -194,65 +200,80 @@ export default function Footer2() {
        
         `}
       </style>
-            <div className="Footer">
-                <div className="container">
-                    <div className="row">
-                        
-                        
-                        <div className="col-md-6 col-lg-3 col-12 ft-2">
-                            <h5>Services</h5>
-                            <ul>
-                                <li className="nav-item">
-                                    <a className="" href="/">Home</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="" href="/">Find A Doctor</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="" href="/">Plans</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="" href="/">Add Your Hospital/Clinic</a>
-                                </li>
-    
-                            </ul>
-                        </div>
-
-                        <div className="col-md-6 col-lg-3 col-12 ft-2">
-                            <h5>Quick Links</h5>
-                            <ul>
-                                <li className="nav-item">
-                                    <a className="" href="/">About Us</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="" href="/">Privacy Policy</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="" href="/">Refund Policy</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="" href="/">Terms Of Use</a>
-                                </li>
-                              
-                            </ul>
-                        </div>
-
-
-
-                        <div className="col-md-6 col-lg-5 col-12 ft-1">
-                          <h3>Health<span>Mudraa</span></h3>
-                            <h3>Contact Us</h3>
-                            <p>#2594/1, 3rd Floor, 15th Cross, 27th Main Rd, 1st Sector, HSR Layout, Bengaluru, Karnataka 560102</p>
-                            <div className="footer-icons">
-                                <i class="fa-brands fa-facebook"></i>
-                                <i class="fa-brands fa-twitter"></i>
-                                <i class="fa-brands fa-instagram"></i>
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div className="Footer">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 col-lg-3 col-12 ft-2">
+              <h5>Services</h5>
+              <ul>
+                <li className="nav-item">
+                  <a className="" href="/">
+                    Home
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="" href="/">
+                    Find A Doctor
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="" href="/">
+                    Plans
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="" href="/">
+                    Add Your Hospital/Clinic
+                  </a>
+                </li>
+              </ul>
             </div>
-        </>
+
+            <div className="col-md-6 col-lg-3 col-12 ft-2">
+              <h5>Quick Links</h5>
+              <ul>
+                <li className="nav-item">
+                  <a className="" href="/">
+                    About Us
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="" href="/">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="" href="/">
+                    Refund Policy
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="" href="/">
+                    Terms Of Use
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="col-md-6 col-lg-5 col-12 ft-1">
+              <h3>
+                Health<span>Mudraa</span>
+              </h3>
+              <h3>Contact Us</h3>
+              <p>
+                #2594/1, 3rd Floor, 15th Cross, 27th Main Rd, 1st Sector, HSR
+                Layout, Bengaluru, Karnataka 560102
+              </p>
+              <div className="footer-icons">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-twitter-x"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-linkedin"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
