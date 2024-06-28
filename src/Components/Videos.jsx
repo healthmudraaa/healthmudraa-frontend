@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Box, TextField, Button, InputAdornment } from "@mui/material";
+import { Box, Card, TextField, Button, InputAdornment } from "@mui/material";
 import { Search } from "@mui/icons-material";
 import DoctorCard from "./DoctorCard";
 import Plyr from "plyr-react";
 import "plyr-react/plyr.css";
+// import ReactPlayer from "react-player";
 import { userHomePage } from "../Service/Services";
 import toast from "react-hot-toast";
 import ShareIcon from "@mui/icons-material/Share";
@@ -12,6 +13,7 @@ import { Flex, FlexCol } from "../styles/CommonStyles";
 import { useNavigate } from "react-router-dom";
 import RenderModalOrBottomSheet from "../Components/common/RenderModalBS";
 import LeadGenerationForm from "../Components/common/Lead-Generation";
+import { Helmet } from "react-helmet-async";
 
 const Videos = () => {
   const [doctor, setDoctor] = useState([]);
@@ -42,10 +44,13 @@ const Videos = () => {
   const doctorDetails = async () => {
     const response = await userHomePage();
     if (response?.data.status) {
+      console.log("doctorDetails-success")
       setLoading(true);
       setDoctor(response.data?.data);
       setLoading(false);
     } else {
+      console.log("doctorDetails-failure")
+      console.log(response);
       setLoading(false);
       toast.error(response.data?.message);
     }
@@ -94,6 +99,11 @@ const Videos = () => {
 
   return (
     <>
+    <Helmet>
+        <title>Healthmudraa-Videos</title>
+        <meta name="description" content="videos page description comes here" />
+      </Helmet>
+      
       <Box display="flex" justifyContent="center" marginTop={"1rem"}>
         <TextField
           value={searchTerm}
@@ -112,11 +122,15 @@ const Videos = () => {
           sx={{ width: "50vw", "@media (max-width: 600px)": { width: "90vw" } }}
         />
       </Box>
-      <div className="container mt-3">
+      <div className="container mt-3 ">
         {loading ? (
           <div className="spinner"></div>
         ) : (
           <div className="row justify-content-center">
+
+       <div className="col-12 text-center my-10">
+        <h1 className="fw-bold my-5 ">Expert Health Advice</h1>
+      </div>
             {doctor.length > 0 &&
               doctor.map((item, idx) => (
                 <div
@@ -135,7 +149,7 @@ const Videos = () => {
                     <FlexCol>
                       <VideoShareWrapper>
                         {item.video.link.length > 0 && (
-                          <Plyr
+                            <Plyr
                             source={{
                               type: "video",
                               sources: [
@@ -145,9 +159,20 @@ const Videos = () => {
                                 },
                               ],
                             }}
+                            options={{
+                              controls: [
+                               // 'play-large', // The large play button in the center
+                                'play', // Play/pause playback
+                                'progress', // The progress bar and scrubber for playback and buffering
+                                'current-time', // The current time of playback
+                                'mute', // Toggle mute
+                                'volume', // Volume control
+                                'settings', // Settings menu
+                              ]
+                            }}
                           />
                         )}
-                        <ShareIcon
+                        {/* <ShareIcon
                           className="shareIcon"
                           sx={{ fontSize: "1rem", marginRight: "0.5rem" }}
                           onClick={() =>
@@ -157,7 +182,7 @@ const Videos = () => {
                               )}`
                             )
                           }
-                        />
+                        /> */}
                       </VideoShareWrapper>
 
                       <DoctorCard
@@ -194,3 +219,11 @@ const Videos = () => {
 };
 
 export default Videos;
+
+
+
+
+
+
+
+
